@@ -1,18 +1,22 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="home-view">
+    <AboveTheFold></AboveTheFold>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import AboveTheFold from '@/components/AboveTheFold.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    AboveTheFold
   }
 }
 </script>
+
+<style scoped lang="scss">
+.home-view {
+
+}
+</style>
