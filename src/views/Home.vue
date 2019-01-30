@@ -1,16 +1,19 @@
 <template>
   <div class="home-view">
-    <AboveTheFold></AboveTheFold>
+    <Introduction></Introduction>
+    <PortfolioList></PortfolioList>
   </div>
 </template>
 
 <script>
-import AboveTheFold from '@/components/AboveTheFold.vue'
+import Introduction from '@/components/Introduction.vue'
+import PortfolioList from '@/components/PortfolioList.vue'
 
 export default {
   name: 'home',
   components: {
-    AboveTheFold
+    Introduction,
+    PortfolioList
   }
 }
 </script>

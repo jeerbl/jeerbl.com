@@ -12,6 +12,8 @@
 </template>
 
 <style scoped lang="scss">
+@import '../styles/colors';
+
 .above-the-fold {
   min-height: 100vh;
   text-align: center;
@@ -24,7 +26,7 @@
     text-align: center;
     position: relative;
     display: inline-block;
-    background-color: #0055A4;
+    background-color: $blue;
     position: relative;
     padding: 0.125rem 1rem;
     color: #fff;
