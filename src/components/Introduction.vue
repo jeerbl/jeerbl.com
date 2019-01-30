@@ -29,7 +29,7 @@
     background-color: $blue;
     position: relative;
     padding: 0.125rem 1rem;
-    color: #fff;
+    color: $white;
     transform: translateY(3rem);
     animation: slide-up 0.25s ease-out 2s;
     animation-fill-mode: forwards;
@@ -41,21 +41,21 @@
     text-align: center;
     font-size: 1.75rem;
     line-height: 2.75rem;
-    color: #000;
+    color: $black;
     opacity: 0;
     animation: opacity 0.25s ease-in 2s, slide 0.25s ease-out 2s;
     animation-fill-mode: forwards;
 
     .details-highlight {
       display: inline-block;
-      border-bottom: 1px dotted #ddd;
+      border-bottom: 1px dotted $lightGray;
       line-height: 2.25rem;
     }
   }
 
   .scroll {
     font-size: 1.5rem;
-    color: #000;
+    color: $black;
     animation: opacity 0.25s ease-in 4s, bounce 1s ease-out infinite;
     animation-fill-mode: forwards;
     opacity: 0;
