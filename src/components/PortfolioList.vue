@@ -1,15 +1,18 @@
 <template>
   <div class="portfolio-list">
-    <div class="left-column">
-      <ul>
-        <li v-for="project in projects" :key="project.slug">
-          <a class="list-element"
-              @mouseover="selectProject(project)">{{project.name}}</a>
-        </li>
-      </ul>
-    </div>
-    <div class="right-column">
-      <img :src="'http://localhost:8081' + activeProject.image.path">
+    <h2>Featured Projects</h2>
+    <div class="portfolio-list-inner">
+      <div class="left-column">
+        <ul>
+          <li v-for="project in projects" :key="project.slug">
+            <a class="list-element"
+                @mouseover="selectProject(project)">{{project.name}}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="right-column">
+        <img :src="'http://localhost:8081' + activeProject.image.path">
+      </div>
     </div>
   </div>
 </template>
@@ -53,42 +56,47 @@ export default {
 .portfolio-list {
   min-height: 100vh;
   background-color: $transparentGray;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  padding: 4rem;
+  box-sizing: border-box;
 
-  .left-column, .right-column {
-    align-self: center;
-    flex-grow: 1;
-    flex-basis: 0;
-    padding: 2rem;
-  }
+  .portfolio-list-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-height: calc(100vh - 12.5rem);
 
-  .right-column {
-    img {
-      max-width: 100%;
+    .left-column, .right-column {
+      align-self: center;
+      flex-grow: 1;
+      flex-basis: 0;
     }
-  }
 
-  .left-column {
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
+    .right-column {
+      img {
+        max-width: 100%;
+      }
+    }
 
-      li {
+    .left-column {
+      ul {
         margin: 0;
         padding: 0;
+        list-style-type: none;
 
-        a.list-element {
-          color: $blue;
-          text-decoration: none;
-          font-size: 1.125rem;
-          font-weight: 600;
-          display: block;
+        li {
+          margin: 0.5rem 0;
+          padding: 0;
 
-          &:hover {
-            text-decoration: underline;
+          a.list-element {
+            color: $blue;
+            text-decoration: none;
+            font-size: 1.125rem;
+            font-weight: 600;
+            display: block;
+
+            &:hover {
+              text-decoration: underline;
+            }
           }
         }
       }
