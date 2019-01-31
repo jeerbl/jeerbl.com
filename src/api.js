@@ -12,3 +12,11 @@ let client = axios.create({
 export function getProjects () {
   return client.get('collections/get/projects')
 }
+
+export function getCompanies () {
+  return client.get('collections/get/companies')
+}
+
+export function getSkills () {
+  return client.get('collections/get/skills')
+}
