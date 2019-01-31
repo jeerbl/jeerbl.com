@@ -4,6 +4,7 @@
     <PortfolioList></PortfolioList>
     <CompanyList></CompanyList>
     <Skills></Skills>
+    <About></About>
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import Introduction from '@/components/Introduction.vue'
 import PortfolioList from '@/components/PortfolioList.vue'
 import CompanyList from '@/components/CompanyList.vue'
 import Skills from '@/components/Skills.vue'
+import About from '@/components/About.vue'
 
 export default {
   name: 'home',
@@ -19,7 +21,8 @@ export default {
     Introduction,
     PortfolioList,
     CompanyList,
-    Skills
+    Skills,
+    About
   }
 }
 </script>

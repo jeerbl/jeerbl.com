@@ -14,38 +14,49 @@ export default new Vuex.Store({
   getters: {
     projects: state => state.projects,
     companies: state => state.companies,
-    skills: state => state.skills
+    skills: state => state.skills,
+    about: state => state.about
   },
   mutations: {
-    receiveProjects (state, { data }) {
-      Vue.set(state, 'projects', data)
+    receiveProjects (state, { entries }) {
+      Vue.set(state, 'projects', entries)
     },
-    receiveCompanies (state, { data }) {
-      Vue.set(state, 'companies', data)
+    receiveCompanies (state, { entries }) {
+      Vue.set(state, 'companies', entries)
     },
-    receiveSkills (state, { data }) {
-      Vue.set(state, 'skills', data)
+    receiveSkills (state, { entries }) {
+      Vue.set(state, 'skills', entries)
+    },
+    receiveAbout (state, { data }) {
+      Vue.set(state, 'about', data)
     }
   },
   actions: {
     getPortfolioList ({ commit }) {
       return api.getProjects()
       .then(({data}) => {
-        commit('receiveProjects', { data })
+        commit('receiveProjects', { ...data })
         return data
       })
     },
     getCompanyList ({ commit }) {
       return api.getCompanies()
       .then(({data}) => {
-        commit('receiveCompanies', { data })
+        commit('receiveCompanies', { ...data })
         return data
       })
     },
     getSkillList ({ commit }) {
       return api.getSkills()
       .then(({data}) => {
-        commit('receiveSkills', { data })
+        commit('receiveSkills', { ...data })
+        return data
+      })
+    },
+    getAbout ({ commit }) {
+      return api.getAbout()
+      .then(({data}) => {
+        commit('receiveAbout', { data })
         return data
       })
     }

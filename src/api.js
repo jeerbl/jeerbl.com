@@ -5,7 +5,7 @@ let client = axios.create({
   timeout: 30000,
   transformResponse: [data => {
     let dataObj = JSON.parse(data)
-    return dataObj.entries
+    return dataObj
   }]
 })
 
@@ -19,4 +19,8 @@ export function getCompanies () {
 
 export function getSkills () {
   return client.get('collections/get/skills')
+}
+
+export function getAbout () {
+  return client.get('singletons/get/about')
 }
