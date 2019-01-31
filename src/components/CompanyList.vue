@@ -33,7 +33,7 @@ export default {
   },
   created () {
     this.getCompanyList()
-    .then(this.loading = false)
+      .then(this.loading = false)
   }
 }
 </script>

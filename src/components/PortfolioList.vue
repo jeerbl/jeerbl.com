@@ -45,7 +45,7 @@ export default {
   },
   created () {
     this.getPortfolioList()
-    .then(this.loading = false)
+      .then(this.loading = false)
   }
 }
 </script>

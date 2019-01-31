@@ -33,7 +33,7 @@ export default {
   },
   created () {
     this.getAbout()
-    .then(this.loading = false)
+      .then(this.loading = false)
   }
 }
 </script>

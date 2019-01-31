@@ -28,7 +28,7 @@ export default {
   },
   created () {
     this.getSkillList()
-    .then(this.loading = false)
+      .then(this.loading = false)
   }
 }
 </script>
