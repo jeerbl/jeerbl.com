@@ -5,9 +5,9 @@ $frenchBlue: #0055A4;
 
 body {
   font-family: 'Varela Round', sans-serif;;
-  font-size: calc(10px + 0.33vw);
+  font-size: calc(10px + 0.5vw);
   -webkit-font-smoothing: antialiased;
-  padding: 5vh 10vw;
+  padding: 5vh 9vw;
   color: $darkGray;
 }
 
@@ -34,11 +34,11 @@ a {
     content: "";
     position: absolute;
     z-index: -1;
-    top: 60%;
+    transition: top 200ms ease-in-out;
+    top: 65%;
     left: -0.1em;
     right: -0.1em;
     bottom: 0;
-    transition: top 200ms ease-in-out;
     background-color: rgba($frenchBlue, 0.5);
   }
 
