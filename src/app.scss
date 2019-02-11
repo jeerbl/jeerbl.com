@@ -1,37 +1,48 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,900|Merriweather:700');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
 
-html {
-  &, body, #app {
-    font-family: 'Montserrat', sans-serif;
-    padding: 0;
-    margin: 0;
-  }
+$darkGray: #1c1e23;
+$frenchBlue: #0055A4;
 
-  /* Size used for rem unit */
-  font-size: 16px;
-  background-color: #fff;
-
-  * {
-    -webkit-font-smoothing: antialiased;
-  }
+body {
+  font-family: 'Varela Round', sans-serif;;
+  font-size: calc(10px + 0.33vw);
+  -webkit-font-smoothing: antialiased;
+  padding: 5vh 10vw;
+  color: $darkGray;
 }
 
-.clearfix:after {
-  content: '';
-  display: table;
-  clear: both;
+h1 {
+  font-size: 4.5em;
+  font-weight: 500;
+  margin-bottom: 0;
 }
 
-h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin: 1rem 0;
-  padding: 0;
-  display: inline-block;
-  font-family: 'Merriweather', serif;
+p {
+  font-size: 1.6em;
+  font-weight: 300;
+  line-height: 1.4;
+  max-width: 26em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  white-space: nowrap;
 
   &:after {
-    content: ' ';
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 60%;
+    left: -0.1em;
+    right: -0.1em;
+    bottom: 0;
+    transition: top 200ms ease-in-out;
+    background-color: rgba($frenchBlue, 0.5);
+  }
 
+  &:hover:after {
+    top: 0%;
   }
 }
