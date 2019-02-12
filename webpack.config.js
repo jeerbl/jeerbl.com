@@ -2,21 +2,27 @@ const path = require('path')
 const webpack = require('webpack')
 
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+
+const devMode = process.env.NODE_ENV !== 'production'
 
 module.exports = {
+  mode: devMode ? 'development' : 'production',
   context: __dirname,
   entry: './src/app.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '',
-    filename: 'bundle.js'
+    filename: 'app.[contenthash].js'
   },
   module: {
     rules: [
       {
         test: /\.scss/,
         use: [
-          'style-loader',
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
           'sass-loader'
@@ -36,7 +42,32 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
-    })
-  ]
+      template: 'src/index.html',
+      hash: true,
+      cache: false,
+      minify: {
+        html5: true,
+        collapseWhitespace: true,
+        collapseBooleanAttributes: true,
+        caseSensitive: true,
+        minifyCSS: true,
+        minifyJS: true,
+        removeComments: true,
+        useShortDoctype: true
+      }
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'app.[contenthash].css'
+    }),
+    new OptimizeCSSAssetsPlugin()
+  ],
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true
+      })
+    ]
+  },
 }

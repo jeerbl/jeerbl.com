@@ -1,5 +1,7 @@
 FROM node:8
 
+ENV NODE_ENV production
+
 RUN mkdir -p /var/www/app
 
 WORKDIR /var/www/app/
