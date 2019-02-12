@@ -6,10 +6,9 @@ cd website
 docker build -t build -f Dockerfile.build .
 docker create --name build-container build
 
-docker cp build-container:/jeerbl.com/dist/. ./build
+docker cp build-container:/var/www/app/dist/. ./build
 
 docker rm -f build-container
-docker rmi build
 
 docker build -t website .
 
