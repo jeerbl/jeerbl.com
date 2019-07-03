@@ -1,5 +1,5 @@
 {
-  "name": "jeerbl.com",
+  "name": "jerome.to",
   "version": "1.0.0",
   "private": true,
   "description": "Jérôme Brunel",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jeerbl/jeerbl.com.git"
+    "url": "git+https://github.com/jeerbl/jerome.to.git"
   },
   "author": "Jérôme Brunel",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jeerbl/jeerbl.com/issues"
+    "url": "https://github.com/jeerbl/jerome.to/issues"
   },
-  "homepage": "https://github.com/jeerbl/jeerbl.com#readme",
+  "homepage": "https://github.com/jeerbl/jerome.to#readme",
   "devDependencies": {
     "autoprefixer": "^9.4.7",
     "css-loader": "^2.1.0",

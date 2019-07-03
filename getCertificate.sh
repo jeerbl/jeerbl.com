@@ -1,3 +1,3 @@
 #!/bin/sh
 
-sudo certbot certonly --standalone -d jeerbl.com
+sudo certbot certonly --standalone -d jerome.to

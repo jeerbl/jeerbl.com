@@ -1,6 +1,6 @@
 #!/bin/sh
 
-git clone https://github.com/jeerbl/jeerbl.com.git website
+git clone https://github.com/jeerbl/jerome.to.git website
 cd website
 
 docker build -t build -f Dockerfile.build .
